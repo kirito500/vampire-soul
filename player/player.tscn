@@ -24,55 +24,52 @@ shape = SubResource( 1 )
 current = true
 zoom = Vector2( 2, 2 )
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="on_death" type="Node2D" parent="."]
 visible = false
-
-[node name="TextEdit" type="TextEdit" parent="on_death"]
-margin_left = -29.0
-margin_top = -178.0
-margin_right = 37.0
-margin_bottom = -149.0
-text = "you lose"
-readonly = true
-context_menu_enabled = false
-shortcut_keys_enabled = false
-virtual_keyboard_enabled = false
-selecting_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
+position = Vector2( -2, -138 )
+scale = Vector2( 3, 3 )
 
 [node name="respawn" type="Button" parent="on_death"]
-margin_left = -64.0
-margin_top = -134.0
-margin_right = 65.0
-margin_bottom = -114.0
+margin_left = -64.3333
+margin_top = 2.33333
+margin_right = 64.6667
+margin_bottom = 22.3333
 text = "restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="scoup" type="TextEdit" parent="."]
-margin_left = -991.0
-margin_top = -580.0
-margin_right = -937.0
-margin_bottom = -559.0
-rect_scale = Vector2( 2, 2 )
-text = "0"
-readonly = true
-highlight_current_line = true
+[node name="Label" type="Label" parent="on_death"]
+margin_left = -27.0
+margin_top = -17.6667
+margin_right = 27.0
+margin_bottom = -3.66667
+text = "You lose"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [node name="Area_expirience" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_expirience"]
+position = Vector2( 0, -3 )
 shape = SubResource( 2 )
 
-[connection signal="pressed" from="on_death/respawn" to="." method="_on_respawn_pressed"]
+[node name="scoup" type="Label" parent="."]
+margin_left = -60.0
+margin_top = -569.0
+margin_right = -20.0
+margin_bottom = -555.0
+rect_scale = Vector2( 3, 3 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="on_death/respawn" to="." method="_on_respawn_pressed"]
 [connection signal="body_entered" from="Area_expirience" to="." method="expirience_Area_body_entered"]
