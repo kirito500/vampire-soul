@@ -19,4 +19,4 @@ func hit():
 	pass
 	
 func test():
-	return "wall"       
+	return "wall"

@@ -10,7 +10,7 @@ extends KinematicBody2D
 func _ready():
 	var vy = 4
 	var y = 0
-	
+
 
 func _process(delta):
 	#print("aaaa")
@@ -18,9 +18,9 @@ func _process(delta):
 
 func hit(damage):
 	queue_free()
-	
+
 func test():
 	return "exp"
-	
+
 func number():
 	return 200
