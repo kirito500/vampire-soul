@@ -14,6 +14,7 @@ var scoup = 0
 var expiriance = 0
 var level = 0
 var next_level_expirience = 1000
+var this_level_expiriance = 0
 var next = 1000
 
 var velocity = Vector2(0,-1)
@@ -45,7 +46,7 @@ func _process(delta):
 		velocity.y = -max_speed
 	
 	
-	print(expiriance)
+	#print(expiriance)
 	
 	get_input()
 
@@ -110,5 +111,12 @@ func _on_Timer_timeout():
 
 
 func expirience_Area_body_entered(body):
-	if body.test() is int:
-		expiriance += body.test()
+	if body.test() == "exp":
+		print(expiriance)
+		expiriance += body.number()
+		$level_progress.value = (next_level_expirience-this_level_expiriance)/(expiriance-this_level_expiriance)*4
+		if expiriance >= next_level_expirience:
+			next_level_expirience += next
+			next += 100
+			level += 1
+			print("level_up")

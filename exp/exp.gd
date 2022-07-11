@@ -13,11 +13,14 @@ func _ready():
 	
 
 func _process(delta):
-	print("aaaa")
+	#print("aaaa")
 	pass
 
 func hit(damage):
 	queue_free()
 	
 func test():
+	return "exp"
+	
+func number():
 	return 200

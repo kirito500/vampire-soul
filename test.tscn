@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://caster.png" type="Texture" id=2]
 [ext_resource path="res://walls.gd" type="Script" id=3]
 [ext_resource path="res://scene/sprites/trava.png" type="Texture" id=4]
 [ext_resource path="res://test.gd" type="Script" id=5]
+[ext_resource path="res://exp/exp.tscn" type="PackedScene" id=6]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -106,5 +107,8 @@ texture = ExtResource( 2 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 30, 6 )
+
+[node name="exp" parent="." instance=ExtResource( 6 )]
+position = Vector2( -145, -20 )
 
 [connection signal="timeout" from="_on_MobTimer_timeout" to="." method="_on__on_MobTimer_timeout_timeout"]
