@@ -33,7 +33,7 @@ func hit(damage):
 	else:
 		emit_signal("death")
 		dead = true
-		
+		$CollisionShape2D.disabled = true
 		$AnimatedSprite.play("death")
 
 
