@@ -18,7 +18,7 @@ var next = 1000
 
 var velocity = Vector2(0,-1)
 var moving = false
-var death = false
+var dead = false
 
 
 func _ready():
@@ -26,7 +26,7 @@ func _ready():
 
 func _process(delta):
 	
-	if death:
+	if dead:
 		velocity = Vector2(0,0)
 	var collision = move_and_collide(velocity * delta)
 	if collision:
@@ -92,19 +92,20 @@ func hit(damage):
 	elif health <= damage:
 		health = 0
 		emit_signal("death")
-		death = true
+		dead = true
 		$on_death.visible = true
 
 
 func _on_respawn_pressed():
 	emit_signal("restart")
 	get_tree().change_scene_to(load("res://test.tscn"))
-	death = false
+	dead = false
 	$on_death.visible = false
 
 
 func _on_Timer_timeout():
-	scoup += 1
+	if !dead:
+		scoup += 1
 	$scoup.text = str(scoup)
 
 
