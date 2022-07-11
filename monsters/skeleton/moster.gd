@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 signal death
 
+var preload_exp = preload("res://exp/exp.tscn")
+
 var uron = 100
 
 var health = 100
@@ -32,9 +34,14 @@ func hit(damage):
 	else:
 		emit_signal("death")
 		dead = true
+		var expi = preload_exp.instance()
+		
 		$AnimatedSprite.play("death")
 
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "death":
 		queue_free()
+		
+func test():
+	return "monster"

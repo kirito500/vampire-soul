@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://caster.png" type="Texture" id=2]
+[ext_resource path="res://walls.gd" type="Script" id=3]
 [ext_resource path="res://scene/sprites/trava.png" type="Texture" id=4]
 [ext_resource path="res://test.gd" type="Script" id=5]
 
@@ -28,7 +29,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1580.74, -1038.14, 0, 0, 0, 0, 3912.26, -1019.14, 0, 0, 0, 0, 3866.26, 1839.86, 0, 0, 0, 0, -1565.8, 1825.91, 0, 0, 0, 0, -1559.16, -1011.88 )
+"points": PoolVector2Array( 0, 0, 0, 0, -685.305, -1260.81, 0, 0, 0, 0, 4627.7, -1262.81, 0, 0, 0, 0, 4631.7, 1837.19, 0, 0, 0, 0, -690.305, 1862.19, 0, 0, 0, 0, -680.305, -1260.81 )
 }
 
 [sub_resource type="RectangleShape2D" id=8]
@@ -56,18 +57,19 @@ wait_time = 0.1
 autostart = true
 
 [node name="SpawnPath" type="Path2D" parent="."]
-position = Vector2( -2039.97, -288.966 )
+position = Vector2( -1984.7, 16.8057 )
 curve = SubResource( 7 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="SpawnPath"]
-position = Vector2( -1576.74, -809.143 )
-rotation = 0.00430348
+position = Vector2( -686.271, 602.261 )
+offset = 15319.1
 rotate = false
-cubic_interp = false
 
 [node name="walls" type="StaticBody2D" parent="."]
+position = Vector2( -6, 0 )
 collision_layer = 3
-collision_mask = 3
+collision_mask = 8
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
 position = Vector2( 2.5, -1354 )

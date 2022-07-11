@@ -11,6 +11,10 @@ var weapon_damage = 30
 var accelerate = 100
 var max_speed = 32
 var scoup = 0
+var expiriance = 0
+var level = 0
+var next_level_expirience = 1000
+var next = 1000
 
 var velocity = Vector2(0,-1)
 var moving = false
@@ -41,7 +45,7 @@ func _process(delta):
 		velocity.y = -max_speed
 	
 	
-	#print(health)
+	print(expiriance)
 	
 	get_input()
 
@@ -102,3 +106,8 @@ func _on_respawn_pressed():
 func _on_Timer_timeout():
 	scoup += 1
 	$scoup.text = str(scoup)
+
+
+func expirience_Area_body_entered(body):
+	if body.test() is int:
+		expiriance += body.test()
