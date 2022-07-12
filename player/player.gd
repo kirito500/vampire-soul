@@ -5,17 +5,17 @@ signal restart
 
 const PRELOAD_BULLET = preload("res://bullets/standart/bullet.tscn")
 
-var max_health = 100
-var health = max_health
-var weapon_damage = 30
-var accelerate = 100
-var max_speed = 32
-var scoup = 0
-var expiriance = 0
-var level = 0
-var next_level_expirience = 1000
-var this_level_expiriance = 0.0001
-var next = 1000
+var max_health = 100    ##максимальное количество жизней
+var health = max_health    ##количество жизней
+var weapon_damage = 30    ##урон
+var accelerate = 100    ##ускорение
+var max_speed = 32    ##максимальныя скорость
+var scoup = 0    ##счет
+var expiriance = 0    ##опыт
+var level = 0    ##какой уровень сейчас
+var next_level_expirience = 1000    ##сколько опыта нужно для следующего уровня
+var this_level_expiriance = 0.0001    ##сколько опыта нужно было для текущего уровня
+var next = 1000    #на сколько больше опыта надо для следующего уровня
 
 var velocity = Vector2(0,-1)
 var moving = false
