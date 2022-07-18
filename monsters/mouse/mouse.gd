@@ -9,7 +9,7 @@ var health = 50
 var velocity = Vector2(0,0)
 var dead = false
 
-var run_speed = 55
+var run_speed = 55#
 
 
 func _physics_process(delta):
