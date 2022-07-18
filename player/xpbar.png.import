@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/XPBETA-1.png-c0fb3a143f0234e29c914bc8c09a15ed.stex"
+path="res://.import/xpbar.png-48c0098efd5a412996d66c88b59a0d7e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/XPBETA-1.png"
-dest_files=[ "res://.import/XPBETA-1.png-c0fb3a143f0234e29c914bc8c09a15ed.stex" ]
+source_file="res://player/xpbar.png"
+dest_files=[ "res://.import/xpbar.png-48c0098efd5a412996d66c88b59a0d7e.stex" ]
 
 [params]
 
