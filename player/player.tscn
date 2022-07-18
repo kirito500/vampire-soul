@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://caster.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
 [ext_resource path="res://player/86c303dd8cc9f1cf.png" type="Texture" id=3]
 [ext_resource path="res://player/XPBAR.png" type="Texture" id=4]
+[ext_resource path="res://player/power_awd.gd" type="Script" id=5]
+[ext_resource path="res://player/3rd_power.gd" type="Script" id=6]
+[ext_resource path="res://player/1st_power.gd" type="Script" id=7]
+[ext_resource path="res://player/2nd_power.gd" type="Script" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.0
@@ -68,6 +72,9 @@ margin_bottom = -555.0
 rect_scale = Vector2( 3, 3 )
 text = "0"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ExpBar" type="TextureProgress" parent="."]
 margin_left = 366.0
@@ -78,6 +85,50 @@ max_value = 1000.0
 texture_over = ExtResource( 4 )
 texture_progress = ExtResource( 3 )
 texture_progress_offset = Vector2( 37, 8 )
+
+[node name="power_awd" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="1st_power" type="Node2D" parent="power_awd"]
+position = Vector2( -423, 0 )
+script = ExtResource( 7 )
+
+[node name="1st_power_select" type="Button" parent="power_awd/1st_power"]
+margin_left = -64.3333
+margin_top = 2.33333
+margin_right = 64.6667
+margin_bottom = 22.3333
+text = "select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2nd_power" type="Node2D" parent="power_awd"]
+script = ExtResource( 8 )
+
+[node name="2nd_power_select" type="Button" parent="power_awd/2nd_power"]
+margin_left = -64.3333
+margin_top = 2.33333
+margin_right = 64.6667
+margin_bottom = 22.3333
+text = "select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3rd_power" type="Node2D" parent="power_awd"]
+position = Vector2( 398, 0 )
+script = ExtResource( 6 )
+
+[node name="3rd_power_select" type="Button" parent="power_awd/3rd_power"]
+margin_left = -64.3333
+margin_top = 2.33333
+margin_right = 64.6667
+margin_bottom = 22.3333
+text = "select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="on_death/respawn" to="." method="_on_respawn_pressed"]

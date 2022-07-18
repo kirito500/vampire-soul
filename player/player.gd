@@ -110,6 +110,7 @@ func _on_Timer_timeout():
 	if !dead:
 		scoup += 1
 	$scoup.text = str(scoup)
+	
 
 func expirience_Area_body_entered(body):
 	if body.test() == "exp":
