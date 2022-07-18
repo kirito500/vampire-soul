@@ -122,8 +122,9 @@ func expirience_Area_body_entered(body):
 		expiriance = 0
 		$ExpBar.value = 0
 		$ExpBar.max_value = $ExpBar.max_value*1.5
-		print("level_up")
 
+		print("level_up")
+#		print("level_up")
 #func update_exp():
 #	$ExpBar.value = expiriance
 	
