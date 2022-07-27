@@ -2,12 +2,13 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="respawn2" type="Button" parent="."]
-margin_left = -64.0
-margin_top = 20.0
-margin_right = 65.0
-margin_bottom = 40.0
-text = "select"
+[node name="Label" type="Label" parent="."]
+margin_left = -89.0
+margin_top = -32.0
+margin_right = 90.0
+margin_bottom = 25.0
+text = "speed up"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -134,3 +134,6 @@ __meta__ = {
 [connection signal="pressed" from="on_death/respawn" to="." method="_on_respawn_pressed"]
 [connection signal="body_entered" from="Area_expirience" to="." method="expirience_Area_body_entered"]
 [connection signal="value_changed" from="ExpBar" to="." method="_on_ExpBar_value_changed"]
+[connection signal="pressed" from="power_awd/1st_power/1st_power_select" to="." method="_on_1st_power_select_pressed"]
+[connection signal="pressed" from="power_awd/2nd_power/2nd_power_select" to="." method="_on_2nd_power_select_pressed"]
+[connection signal="pressed" from="power_awd/3rd_power/3rd_power_select" to="." method="_on_3rd_power_select_pressed"]

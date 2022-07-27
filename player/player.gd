@@ -28,7 +28,6 @@ func _ready():
 
 func _process(delta):
 	
-	
 	if dead:
 		velocity = Vector2(0,0)
 	var collision = move_and_collide(velocity * delta)
@@ -46,7 +45,6 @@ func _process(delta):
 		velocity.y = max_speed
 	elif velocity.y < -max_speed:
 		velocity.y = -max_speed
-	
 	
 	#print(expiriance)
 	
@@ -114,7 +112,6 @@ func _on_Timer_timeout():
 
 func expirience_Area_body_entered(body):
 	if body.test() == "exp":
-		print(expiriance)
 		expiriance += body.number()
 
 	$ExpBar.value = expiriance
@@ -123,6 +120,7 @@ func expirience_Area_body_entered(body):
 		expiriance = 0
 		$ExpBar.value = 0
 		$ExpBar.max_value = $ExpBar.max_value*1.5
+		
 
 		print("level_up")
 #		print("level_up")
@@ -150,7 +148,25 @@ func _on_ExpBar_value_changed(value):
 	value = $ExpBar.value
 	if $ExpBar.value >= $ExpBar.max_value:
 		value = 0
+
+
+
+
+func level_up():
+	var ran = round(rand_range(0,3))
+	if ran == 1:
+		
+	
 	
 
-	
-	
+func _on_1st_power_select_pressed():
+	pass
+
+
+func _on_2nd_power_select_pressed():
+	pass
+
+
+func _on_3rd_power_select_pressed():
+	pass
+
